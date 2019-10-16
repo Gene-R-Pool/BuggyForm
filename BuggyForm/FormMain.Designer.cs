@@ -40,9 +40,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -56,7 +57,7 @@
             this.buttonGo.Name = "buttonGo";
             this.buttonGo.Size = new System.Drawing.Size(100, 30);
             this.buttonGo.TabIndex = 4;
-            this.buttonGo.Text = "Go";
+            this.buttonGo.Text = "&Go";
             this.buttonGo.UseVisualStyleBackColor = true;
             this.buttonGo.Click += new System.EventHandler(this.buttonGoClick);
             // 
@@ -68,7 +69,7 @@
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(100, 30);
             this.buttonClose.TabIndex = 5;
-            this.buttonClose.Text = "Close";
+            this.buttonClose.Text = "&Close";
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonCloseClick);
             // 
@@ -96,7 +97,7 @@
             this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(592, 347);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main Tab";
@@ -166,27 +167,40 @@
             // 
             this.tabPage2.AccessibleDescription = "SecondaryTab";
             this.tabPage2.AccessibleName = "tabSecondary";
+            this.tabPage2.Controls.Add(this.textBox3);
             this.tabPage2.Controls.Add(this.checkBox3);
             this.tabPage2.Controls.Add(this.checkBox2);
             this.tabPage2.Controls.Add(this.checkBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(592, 347);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Secondary Tab";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // textBox3
             // 
-            this.checkBox1.AccessibleDescription = "Check box on the secondary tab";
-            this.checkBox1.AccessibleName = "checkBox";
-            this.checkBox1.Location = new System.Drawing.Point(7, 6);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(212, 33);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "Only click when displayed";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.textBox3.AccessibleDescription = "Text Box that displays text when the mouse is hovered over it";
+            this.textBox3.AccessibleName = "textBoxMouseHover";
+            this.textBox3.Location = new System.Drawing.Point(296, 8);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(286, 108);
+            this.textBox3.TabIndex = 9;
+            this.textBox3.MouseLeave += new System.EventHandler(this.textBox3_MouseLeave);
+            this.textBox3.MouseHover += new System.EventHandler(this.textBox3_MouseHover);
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AccessibleDescription = "Check box with a duplicate name";
+            this.checkBox3.AccessibleName = "checkBox2";
+            this.checkBox3.Location = new System.Drawing.Point(7, 84);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(212, 33);
+            this.checkBox3.TabIndex = 8;
+            this.checkBox3.Text = "I am the duplicate";
+            this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // checkBox2
             // 
@@ -199,16 +213,16 @@
             this.checkBox2.Text = "I have a duplicate name";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // checkBox1
             // 
-            this.checkBox3.AccessibleDescription = "Check box with a duplicate name";
-            this.checkBox3.AccessibleName = "checkBox2";
-            this.checkBox3.Location = new System.Drawing.Point(7, 84);
-            this.checkBox3.Name = "checkBox2";
-            this.checkBox3.Size = new System.Drawing.Size(212, 33);
-            this.checkBox3.TabIndex = 8;
-            this.checkBox3.Text = "I am the duplicate";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox1.AccessibleDescription = "Check box on the secondary tab";
+            this.checkBox1.AccessibleName = "checkBox";
+            this.checkBox1.Location = new System.Drawing.Point(7, 6);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(212, 33);
+            this.checkBox1.TabIndex = 6;
+            this.checkBox1.Text = "Only click when displayed";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // FormMain
             // 
@@ -224,6 +238,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
         }
 
@@ -243,5 +258,6 @@
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }

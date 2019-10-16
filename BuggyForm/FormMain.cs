@@ -34,5 +34,15 @@ namespace BuggyForm
         {
             Close();
         }
+
+        private void textBox3_MouseHover(object sender, EventArgs e)
+        {
+            this.textBox3.Text = "Mouse Hover";
+        }
+
+        private void textBox3_MouseLeave(object sender, EventArgs e)
+        {
+            this.textBox3.Clear();
+        }
     }
 }
